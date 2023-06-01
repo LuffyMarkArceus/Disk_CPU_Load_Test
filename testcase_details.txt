@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+
+						Test Scenario: SSH Connectivity Test
+
+--------------------------------------------------------------------------------------
+
+Description:
+	
+	This test scenario focuses on verifying the SSH connectivity to a remote server using both password and key-based authentication methods.
+
+--------------------------------------------------------------------------------------
+
+Setup:
+
+	Prepare a remote server with SSH enabled and accessible.
+
+	Obtain the following information:
+	
+	Hostname or IP address of the remote server
+	
+	SSH port number
+	
+	Username for authentication
+	
+	Password for password-based authentication
+	
+	Path to a valid private key file for key-based authentication
+
+--------------------------------------------------------------------------------------
+
+Tools Used:
+
+	Python with the paramiko library for SSH connectivity testing
+
+--------------------------------------------------------------------------------------
+
+Test Steps:
+
+	Initialize the SSH client.
+	
+	Configure the SSH client to use the system host keys and auto-add policy.
+	
+	Attempt to establish an SSH connection with password-based authentication:
+		a. Provide the hostname, port, username, and password to the SSH client.
+		b. Verify if the SSH connection is established successfully.
+		c. Close the SSH connection.
+	
+	Attempt to establish an SSH connection with key-based authentication:
+		a. Load the private key from the specified file path.
+		b. Provide the hostname, port, username, and private key to the SSH client.
+		c. Verify if the SSH connection is established successfully.
+		d. Close the SSH connection.
+	
+	Return a pass/fail status based on the success or failure of the SSH connectivity tests.
+
+--------------------------------------------------------------------------------------
+
+Pass/Fail Criteria:
+
+	Pass: 
+		Both the password-based and key-based SSH connections are established successfully.
+
+	Fail: Any of the following conditions occur:
+		Authentication fails (incorrect username, password, or private key).
+		SSH connection cannot be established.
+		An error occurs during the SSH connectivity test.
